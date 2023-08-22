@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IslamyApp</string>
+    <string name="islamy">islamy</string>
+    <string name="quran">Quran</string>
+    <string name="radio">Radio</string>
+    <string name="sebha">Sebha</string>
+    <string name="sora_name">Sora Name</string>
+    <string name="sora_number">Sora Number</string>
+    <string name="al_ahadeath">El Ahadeath</string>
+</resources>
