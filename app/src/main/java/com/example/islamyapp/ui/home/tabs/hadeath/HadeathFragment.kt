@@ -31,7 +31,7 @@ class HadeathFragment :Fragment() {
         readTheHadeathFiles()
         adapter.onHadeathClickListener= object : HadeathAdapter.OnHadeathClickListener {
             override fun OnHadeathClick(item: HadeathItem, position: Int) {
-                showHadeathDetails(item)
+                showHadeathDetails(hadeathItem)
             }
 
 
@@ -45,6 +45,7 @@ class HadeathFragment :Fragment() {
     }
 
     val ahadeathList = mutableListOf<HadeathItem>()
+    lateinit var hadeathItem: HadeathItem
     private fun readTheHadeathFiles() {
 
         val fileContent = requireContext().assets.open("ahadeth.txt").bufferedReader().use{
@@ -54,7 +55,8 @@ class HadeathFragment :Fragment() {
                 val hadeath = it.trim().split("\n")
             var name = hadeath[0]
             var content =hadeath.joinToString("\n")
-            ahadeathList.add(HadeathItem(name,content))
+            hadeathItem =HadeathItem(name,content)
+            ahadeathList.add(hadeathItem)
             adapter.upDataData(ahadeathList)
         }
     }
