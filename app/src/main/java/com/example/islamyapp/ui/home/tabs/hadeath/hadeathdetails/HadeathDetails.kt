@@ -24,12 +24,6 @@ class HadeathDetails : AppCompatActivity() {
         }
 
     }
-
-    private fun bindHadeath() {
-        viewBinding.nameOfHadeath.text=hadeathItem?.name
-        viewBinding.contentOfHadeath.text = hadeathItem?.hadeathContent
-    }
-
     private fun initParams() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             hadeathItem = intent.getParcelableExtra(Consts.EXTRA_HADEATH,HadeathItem::class.java)
@@ -38,4 +32,11 @@ class HadeathDetails : AppCompatActivity() {
         }
 
     }
+
+    private fun bindHadeath() {
+
+        viewBinding.contentOfHadeath.text = hadeathItem?.hadeathContent
+    }
+
+
 }

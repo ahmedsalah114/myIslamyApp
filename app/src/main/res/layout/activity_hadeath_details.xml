@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.tabs.hadeath.hadeathdetails.HadeathDetails"
-    tools:background="@drawable/main_bg">
+    android:background="@drawable/main_bg">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -56,44 +56,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
-            <TextView
-                android:id="@+id/name_of_hadeath"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="10dp"
+            <androidx.core.widget.NestedScrollView
 
-                android:textSize="25sp"
-                tools:text="الحديث الاول"
-
-                />
-            <View
-                android:id="@+id/hadeath_name_view"
-                android:layout_width="0dp"
-                android:layout_height="2dp"
-                app:layout_constraintTop_toBottomOf="@id/name_of_hadeath"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_percent=".7"
-                android:background="@color/primaryColor"
-                android:layout_marginTop="5dp"/>
-
-            <TextView
-                android:id="@+id/content_of_hadeath"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hadeath_name_view"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:padding="10dp"
-                android:text="dfjhfdlkhdsfal"
-                android:textSize="28sp"
+                android:layout_marginTop="8dp"
+                >
+                <TextView
+                    android:id="@+id/content_of_hadeath"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:padding="10dp"
+                    android:text="dfjhfdlkhdsfal"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    />
 
-                android:gravity="center"
+            </androidx.core.widget.NestedScrollView>
 
-                />
 
 
             

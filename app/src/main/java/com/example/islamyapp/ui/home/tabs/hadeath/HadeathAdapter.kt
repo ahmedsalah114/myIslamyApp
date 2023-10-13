@@ -26,7 +26,7 @@ class HadeathAdapter(var list: List<HadeathItem>?=null) :RecyclerView.Adapter<Ha
         val item =list?.get(position)
         holder.hadeathTitleText.text=item?.name
         holder.view.setOnClickListener{
-            onHadeathClickListener?.OnHadeathClick(HadeathItem(),position)
+            onHadeathClickListener?.OnHadeathClick(item!!,position)
         }
     }
 

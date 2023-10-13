@@ -24,27 +24,30 @@ class HadeathFragment :Fragment() {
       viewBinding = FragmentHadeathBinding.inflate(inflater,container,false)
         return viewBinding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
-        readTheHadeathFiles()
+
         adapter.onHadeathClickListener= object : HadeathAdapter.OnHadeathClickListener {
             override fun OnHadeathClick(item: HadeathItem, position: Int) {
                 showHadeathDetails(item)
             }
-
-
         }
     }
-
+    val ahadeathList = mutableListOf<HadeathItem>()
+    override fun onStart() {
+        super.onStart()
+        readTheHadeathFiles()
+        bindItems()
+    }
     private fun showHadeathDetails(hadeath: HadeathItem) {
         val intent =Intent(requireContext(),HadeathDetails::class.java)
         intent.putExtra(Consts.EXTRA_HADEATH,hadeath)
         startActivity(intent)
     }
-
-    val ahadeathList = mutableListOf<HadeathItem>()
+    private fun bindItems() {
+        adapter.upDataData(ahadeathList)
+    }
     private fun readTheHadeathFiles() {
 
         val fileContent = requireContext().assets.open("ahadeth.txt").bufferedReader().use{
@@ -55,12 +58,8 @@ class HadeathFragment :Fragment() {
             var name = hadeath[0]
             var content =hadeath.joinToString("\n")
             ahadeathList.add(HadeathItem(name,content))
-            adapter.upDataData(ahadeathList)
         }
     }
-
-
-
     private fun initRecyclerView() {
         adapter =HadeathAdapter(null)
         viewBinding.hadeathTitlesRv.adapter=adapter
