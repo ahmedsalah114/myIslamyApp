@@ -42,15 +42,21 @@ var tasbeh=0
             tasbeh++
         }
         when (tasbeh){
+
             1 -> {
-                counter=0
+
                 viewBinding.content.text=Consts.ALAH_AKBAR
+                viewBinding.counter.text=counter.toString()
+            counter =0
                 returnTransition
+
             }
             2->{
-                counter=0
+
                 viewBinding.content.text=Consts.SOBHAN_ALAH
+                viewBinding.counter.text=counter.toString()
                 return onClick()
+
             }
         }
         viewBinding.ivBody.rotation=viewBinding.ivBody.rotation+20
