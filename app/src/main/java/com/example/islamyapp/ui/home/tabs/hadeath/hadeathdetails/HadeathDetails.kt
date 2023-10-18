@@ -12,7 +12,7 @@ import com.example.islamyapp.ui.home.tabs.hadeath.HadeathItem
 
 class HadeathDetails : AppCompatActivity() {
     lateinit var viewBinding:ActivityHadeathDetailsBinding
-     var hadeathItem:HadeathItem?=null
+     private var hadeathItem:HadeathItem?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding= ActivityHadeathDetailsBinding.inflate(layoutInflater)

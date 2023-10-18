@@ -32,6 +32,8 @@ class HadeathFragment :Fragment() {
             override fun OnHadeathClick(item: HadeathItem, position: Int) {
                 showHadeathDetails(item)
             }
+
+
         }
     }
     val ahadeathList = mutableListOf<HadeathItem>()
